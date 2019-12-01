@@ -78,26 +78,6 @@ namespace Bandposting2._6
             IWebElement submit = driver.FindElement(By.XPath("//*[@id='email_login_form']/button"));
             submit.Click();
 
-            //캡챠
-            if (n == 0)
-            {
-                Console.WriteLine("캡챠 완료후 콘솔창 엔터하세요.");
-                Console.ReadKey();
-                Console.WriteLine("실행된 크롬창을 활성화 해주세요.");
-                Thread.Sleep(10000);
-            }
-            try
-            {
-                wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='content']/div/section/header/div/div/button[1]")));
-                Console.WriteLine(IdList[n] + "로그인성공");
-            }
-            catch (Exception)
-            {
-                Console.WriteLine(IdList[n] + "로그인 실패 다시 시도합니다");
-                driver.Close();
-                continue;
-            }
-
             //탭갯수
             int ctab = 0;
 
