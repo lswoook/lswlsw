@@ -209,6 +209,7 @@ namespace Bandposting2._6
                 alert.Accept();
             }
             catch (NoAlertPresentException){
+                
             }
         }
     }
