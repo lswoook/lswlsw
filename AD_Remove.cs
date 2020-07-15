@@ -1,21 +1,23 @@
-﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Windows;
+using System.Threading;
 using System.Threading.Tasks;
+
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
-using System.Threading;
+
 using AutoItX3Lib;
-using OpenQA.Selenium.Firefox;
-using System.Windows;
-using System.Runtime.InteropServices;
+
 using Excel = Microsoft.Office.Interop.Excel;
-using System.Reflection;
-using OpenQA.Selenium.Edge;
-using System.IO;
 
 namespace Bandposting2._6
 {
@@ -27,18 +29,18 @@ namespace Bandposting2._6
             Excel.Workbook xlWorkBook;
             Excel.Worksheet xlWorkSheet;
             Excel.Range range;
-            string str, str1, str2, str3, before, after, chat;
-
-            int rCnt = 1, cCnt = 1, idc; // 열 갯수
-            int cCnt = 1; // 행 갯수
+            
+            int rCnt = 1, cCnt = 1, idc; // 엑셀 연동에 필요한 행.열 갯수
+            
+            string str, str1, str2, str3, before, after;
             string[] IdList = new string[1000];
             string[] LbF = new string[1000];
             string[] LaF = new string[1000];
             string[] Lct = new string[1000];
+            
             AutoItX3 autoit = new AutoItX3();
             Random rand = new Random();
             IWebDriver driver = new ChromeDriver(options);
-
             Actions action = new Actions(driver);
 
 
@@ -52,70 +54,53 @@ namespace Bandposting2._6
 
             /*메인 로그인*/
             wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='header']/div/div/div/a[3]")));
-            query = driver.FindElement(By.XPath("//*[@id='header']/div/div/div/a[3]"));
-            query.Click();
+            driver.FindElement(By.XPath("//*[@id='header']/div/div/div/a[3]")).Click();
 
-            /*이메일 로그인 선택*/
             wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='login_list']/li[2]/a")));
-            query = driver.FindElement(By.XPath("//*[@id='login_list']/li[2]/a"));
-            query.Click();
+            driver.FindElement(By.XPath("//*[@id='login_list']/li[2]/a")).Click();
 
-            /* 아이디입력 */
             wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='input_email']")));
-            query = driver.FindElement(By.XPath("//*[@id='input_email']"));
-            query.SendKeys(IdList[n]);
+            driver.FindElement(By.XPath("//*[@id='input_email']")).Click();
 
-            Thread.Sleep(1000);
-
-            /* 비번입력 */
             wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='input_password']")));
-            query = driver.FindElement(By.XPath("//*[@id='input_password']"));
-            query.SendKeys(spw);
+            driver.FindElement(By.XPath("//*[@id='input_password']")).SendKeys(spw);
 
-            Thread.Sleep(1000);
-
-            /*로그인 버튼 누르기 >_< */
-            IWebElement submit = driver.FindElement(By.XPath("//*[@id='email_login_form']/button"));
-            submit.Click();
+            driver.FindElement(By.XPath("//*[@id='email_login_form']/button")).Click();
 
             //탭갯수
             int ctab = 0;
 
             /*밴드 정렬*/
-            try
-            {
+            try{
                 wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='content']/div/section/header/div/div/button[1]")));
-                IWebElement sort = driver.FindElement(By.XPath("//*[@id='content']/div/section/header/div/div/button[1]"));
-                sort.Click();
+                driver.FindElement(By.XPath("//*[@id='content']/div/section/header/div/div/button[1]")).Click();
                 Thread.Sleep(1000);
 
                 wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='content']/div/section/header/div/div/section[1]/div/div[2]/article/div/div[3]/div/div/a/span")));
-                IWebElement sort3 = driver.FindElement(By.XPath("//*[@id='content']/div/section/header/div/div/section[1]/div/div[2]/article/div/div[3]/div/div/a/span"));
-                sort3.Click();
+                driver.FindElement(By.XPath("//*[@id='content']/div/section/header/div/div/section[1]/div/div[2]/article/div/div[3]/div/div/a/span")).Click();
                 Thread.Sleep(1000);
+                
                 action.SendKeys(Keys.Down).Perform();
                 action.SendKeys(Keys.Down).Perform();
                 action.SendKeys(Keys.Enter).Perform();
-                Thread.Sleep(500);
 
                 wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='content']/div/section/header/div/div/section[1]/div/div[2]/article/footer/div/button")));
-                IWebElement sortc = driver.FindElement(By.XPath("//*[@id='content']/div/section/header/div/div/section[1]/div/div[2]/article/footer/div/button"));
-                sortc.Click();
+                driver.FindElement(By.XPath("//*[@id='content']/div/section/header/div/div/section[1]/div/div[2]/article/footer/div/button")).Click();
                 Thread.Sleep(1000);
 
                 autoit.Send("^t");
                 ctab++;
-                Thread.Sleep(1000);
+                
                 driver.SwitchTo().Window(driver.WindowHandles[ctab]);
                 driver.Navigate().GoToUrl(URL);
             }
-            catch (Exception)
-            {
+            catch (Exception){
                 Console.WriteLine("로그인 실패");
                 driver.Close();
                 continue;
             }
 
+            /*밴드정렬 한뒤, 차례대로 들어가서 검사 진행*/
             int startb = frontb + 1;
             Console.WriteLine(startb + "번째 블록에서 시작합니다");
             int Bnum = 0;
@@ -124,14 +109,12 @@ namespace Bandposting2._6
             {
                 Thread.Sleep(1000);
                 /*밴드 갯수 세기*/
-                try
-                {
+                try{
                     wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='content']/div/section/div/ul/li")));
                     Bnum = driver.FindElements(By.XPath("//*[@id='content']/div/section/div/ul/li")).Count - frontb - backb;
                     Console.WriteLine("현재 밴드갯수:" + Bnum);
                 }
-                catch (Exception)
-                {
+                catch (Exception){
                     Console.WriteLine("모니터링 실패: " + IdList[n]);
                 }
                 Thread.Sleep(1000);
@@ -140,14 +123,12 @@ namespace Bandposting2._6
                 string bstr = "//*[@id='content']/div/section/div/ul/li[{0}]/div/a/div[1]/div/span";
                 string data = startb.ToString();
                 string address = string.Format(bstr, data);
-                try
-                {
+                try{
                     wait.Until(ExpectedConditions.ElementExists(By.XPath(address)));
                     IWebElement band = driver.FindElement(By.XPath(address));
                     band.Click();
                 }
-                catch (Exception)
-                {
+                catch (Exception){
                     driver.SwitchTo().Window(driver.WindowHandles[ctab]).Close();
                     ctab--;
                     driver.SwitchTo().Window(driver.WindowHandles[ctab]);
@@ -155,8 +136,7 @@ namespace Bandposting2._6
                 }
 
                 //포스팅 내용중 광고성 메세지 포함여부 검사
-                try
-                {
+                try{
                     Thread.Sleep(2000);
                     IWebElement textbox = driver.FindElement(By.XPath("//*[@id='content']/section/div[2]/div/button"));
                     str context = textbox.getText; // 포스팅 내용을 context에 저장
@@ -184,49 +164,51 @@ namespace Bandposting2._6
                     driver.Navigate().GoToUrl(URL);
                     continue;
                 }
-
-                for (int i = 0; i < n; i++)
+                
+                /*포스팅 내용중 키워드 풀에 해당하는 단어가 있는지 체크*/
+                int AD_ref_cnt = 0;
+                for(int i = 0 ; i< keywords.length ; i++0)
                 {
-
                     if (context.Contains(keywords[i]))
-                        {
-
+                    {
+                        AD_ref_cnt++;
+                    }
+                }
+                
+                /*링크 + 악성키워드로 판단되면 삭제진행*/
+                if (AD_reft_cnt >= 1 && context.Contains("http"))
+                {
                         //광고성 포스팅 삭제
                         context.ClipPut(before);
-                        try
-                        {
+                        try{
                             waitc.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='layerContainer']/div/section/div/div[2]/article/div/div/div[4]/div/button[2]")));
-                            IWebElement post2 = driver.FindElement(By.XPath("//*[@id='layerContainer']/div/section/div/div[2]/article/div/div/div[4]/div/button[2]"));
-                            action.Click(post2).Perform();
+                            driver.FindElement(By.XPath("//*[@id='layerContainer']/div/section/div/div[2]/article/div/div/div[4]/div/button[2]")).Click(post2).Perform();
                         }
-                        catch (Exception)
-                        {
+                        catch (Exception){
+                            
                         }
                         Thread.Sleep(rand.Next(2000, 3000));
                     }
                 }
             }
+        
             //로그아웃
             while (true)
             {
-                try
-                {
+                try{
                     driver.SwitchTo().Window(driver.WindowHandles[0]);
                     break;
                 }
-                catch (Exception)
-                {
+                catch (Exception){
                 }
             }
-            try
-            {
+            try{
                 // Check the presence of alert
                 Thread.Sleep(1000);
                 IAlert alert = driver.SwitchTo().Alert();
                 alert.Accept();
             }
-            catch (NoAlertPresentException)
-            {
+            catch (NoAlertPresentException){
             }
         }
     }
