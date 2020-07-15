@@ -1,0 +1,119 @@
+<?php
+define("TOKEN", "lxx2030");
+$wechatObj = new wechatCallbackapiTest();
+if (isset($_GET['echostr'])) {
+    $wechatObj->valid();
+}else{
+    $wechatObj->responseMsg();
+}
+
+class wechatCallbackapiTest
+{
+  
+    public function valid()
+    {
+        $echoStr = $_GET["echostr"];
+        if($this->checkSignature()){
+            echo $echoStr;
+            exit;
+        }
+    }
+    private function checkSignature()
+    {
+        $signature = $_GET["signature"];
+        $timestamp = $_GET["timestamp"];
+        $nonce = $_GET["nonce"];
+        $token = TOKEN;
+        $tmpArr = array($token, $timestamp, $nonce);
+        sort($tmpArr);
+        $tmpStr = implode( $tmpArr );
+        $tmpStr = sha1( $tmpStr );
+        if( $tmpStr == $signature ){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function responseMsg()
+    {
+    $dbname = 'EcMqspXFXCGJMRfqNXgt';
+	  $host = getenv('HTTP_BAE_ENV_ADDR_SQL_IP');
+	  $port = getenv('HTTP_BAE_ENV_ADDR_SQL_PORT');
+	  $user = getenv('HTTP_BAE_ENV_AK');
+	  $pwd = getenv('HTTP_BAE_ENV_SK');
+	  $link = @mysql_connect("{$host}:{$port}",$user,$pwd,true);
+      if(!$link)
+      {
+     	$contentStr="Connect Server Failed: ".mysql_error();
+  	 	$msgType = "text";
+        $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
+        echo $resultStr;
+      }
+      
+	  if(!mysql_select_db($dbname,$link))
+      {
+        $contentStr="Select Database Failed: ". mysql_error($link);
+        $msgType = "text";
+        $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
+	  	echo $resultStr;
+      }
+      
+        $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
+        if (!empty($postStr)){
+            $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
+            $fromUsername = $postObj->FromUserName;
+            $toUsername = $postObj->ToUserName;
+            $keyword = trim($postObj->Content);
+            $time = time();
+            $textTpl = "<xml>
+                        <ToUserName><![CDATA[%s]]></ToUserName>
+                        <FromUserName><![CDATA[%s]]></FromUserName>
+                        <CreateTime>%s</CreateTime>
+                        <MsgType><![CDATA[%s]]></MsgType>
+                        <Content><![CDATA[%s]]></Content>
+                        <FuncFlag>0</FuncFlag>
+                        </xml>";
+          
+          	$conn = mysql_query("SELECT *FROM user",$link)
+            
+            while($row = mysql_fetch_array($conn))
+            {
+              if($row['stat'] == 1)
+              {
+                $ponn
+              }
+            }          	
+          
+            if($keyword == "?")
+            {
+                $msgType = "text";
+                $contentStr = "?Ô³?ÔðüÞÓÍêóïÃËÕ??£¿ Ñá???ýñØÐ?Óðä§??îÜüÞÓÍ£¿";
+              	
+                $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
+                echo $resultStr;              
+            }
+            
+           	else
+            { 
+              $k=rand(1,5);
+              $result = mysql_query("SELECT *FROM phrase",$link);
+              while($row = mysql_fetch_array($result))
+              {	
+                if($row['number'] == $k)
+                {
+                  $contentStr = $row['text'];
+                }
+               }
+              $msgType = "text";
+              $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
+              echo $resultStr;
+            }
+        }
+      		else{
+            echo "";
+            exit;
+        }
+    }
+}
+?>
