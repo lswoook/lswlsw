@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="CoffeeCup HTML Editor (www.coffeecup.com)">
+    <meta name="dcterms.created" content="周一, 29 七月 2013 12:30:04 GMT">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>MyPhotos</title>
+	<link rel ="stylesheet" type="text/css" href="pic.css">
+  </head>
+ <body>
+
+<div id="header">
+			<ul>
+				<li><a href="untitled1.html">Date</a>
+					<ul>
+						<li><a href="#" onclick = sh("2013-07-17") >2013-07-17</a></li>
+						<li><a href="#" onclick = sh("2013-07-18") >2013-07-18</a></li>
+						<li><a href="#" onclick = sh("2013-07-20") >2013-07-20</a></li>
+						<li><a href="#" onclick = sh("2013-07-21") >2013-07-21</a></li>
+						<li><a href="#" onclick = sh("2013-07-23") >2013-07-23</a></li>
+						<li><a href="#" onclick = sh("2013-07-24") >2013-07-24</a></li>
+						<li><a href="#" onclick = sh("2013-07-26") >2013-07-26</a></li>
+						<li><a href="#" onclick = sh("2013-07-27") >2013-07-27</a></li>
+						<li><a href="#" onclick = sh("2013-07-29") >2013-07-29</a></li>
+						<li><a href="#" onclick = sh("2013-07-30") >2013-07-30</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div><br>
+ <br><br><br><br><br><br>
+
+<div id="dimg1"></div>
+<div id="dimg2"></div>
+<div id="dimg3"></div>
+<div id="dimg4"></div>
+<div id="dimg5"></div>
+<br><br>
+ <div id="tdate">
+ </div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+  
+  var photos = {"photos":[{"id":"155a58cc65","time":1375165317851,"width":917,"height":1008,"imageURL":"http://photo-sync.herokuapp.com/photos/155a58cc65","commentURL":"http://photo-sync.herokuapp.com/comments/155a58cc65"},{"id":"19deb5ddad","time":1375164815498,"width":1111,"height":1064,"imageURL":"http://photo-sync.herokuapp.com/photos/19deb5ddad","commentURL":"http://photo-sync.herokuapp.com/comments/19deb5ddad"},{"id":"13a151c856","time":1375164815468,"width":843,"height":1087,"imageURL":"http://photo-sync.herokuapp.com/photos/13a151c856","commentURL":"http://photo-sync.herokuapp.com/comments/13a151c856"},{"id":"13cb14e876","time":1375164288139,"width":850,"height":1152,"imageURL":"http://photo-sync.herokuapp.com/photos/13cb14e876","commentURL":"http://photo-sync.herokuapp.com/comments/13cb14e876"},{"id":"1560380b97","time":1375164144135,"width":918,"height":859,"imageURL":"http://photo-sync.herokuapp.com/photos/1560380b97","commentURL":"http://photo-sync.herokuapp.com/comments/1560380b97"},{"id":"1a85a68e17","time":1375164144123,"width":1139,"height":1143,"imageURL":"http://photo-sync.herokuapp.com/photos/1a85a68e17","commentURL":"http://photo-sync.herokuapp.com/comments/1a85a68e17"},{"id":"1b6dee5a88","time":1375163664984,"width":1178,"height":845,"imageURL":"http://photo-sync.herokuapp.com/photos/1b6dee5a88","commentURL":"http://photo-sync.herokuapp.com/comments/1b6dee5a88"},{"id":"1b08c69058","time":1375163664828,"width":1161,"height":1134,"imageURL":"http://photo-sync.herokuapp.com/photos/1b08c69058","commentURL":"http://photo-sync.herokuapp.com/comments/1b08c69058"},{"id":"14fb0da293","time":1375163549641,"width":901,"height":1132,"imageURL":"http://photo-sync.herokuapp.com/photos/14fb0da293","commentURL":"http://photo-sync.herokuapp.com/comments/14fb0da293"},{"id":"1b6822cfa1","time":1375163543808,"width":1177,"height":1122,"imageURL":"http://photo-sync.herokuapp.com/photos/1b6822cfa1","commentURL":"http://photo-sync.herokuapp.com/comments/1b6822cfa1"},{"id":"191421b4cf","time":1375157723080,"width":1077,"height":1193,"imageURL":"http://photo-sync.herokuapp.com/photos/191421b4cf","commentURL":"http://photo-sync.herokuapp.com/comments/191421b4cf"},{"id":"19dea9d9a7","time":1375157721656,"width":1111,"height":985,"imageURL":"http://photo-sync.herokuapp.com/photos/19dea9d9a7","commentURL":"http://photo-sync.herokuapp.com/comments/19dea9d9a7"},{"id":"19a2f75390","time":1375157721535,"width":1101,"height":830,"imageURL":"http://photo-sync.herokuapp.com/photos/19a2f75390","commentURL":"http://photo-sync.herokuapp.com/comments/19a2f75390"},{"id":"1bdf4b5223","time":1375100241937,"width":1197,"height":1037,"imageURL":"http://photo-sync.herokuapp.com/photos/1bdf4b5223","commentURL":"http://photo-sync.herokuapp.com/comments/1bdf4b5223"},{"id":"15546d7a9c","time":1375099668972,"width":916,"height":1077,"imageURL":"http://photo-sync.herokuapp.com/photos/15546d7a9c","commentURL":"http://photo-sync.herokuapp.com/comments/15546d7a9c"},{"id":"157e16fd0a","time":1375081347140,"width":923,"height":974,"imageURL":"http://photo-sync.herokuapp.com/photos/157e16fd0a","commentURL":"http://photo-sync.herokuapp.com/comments/157e16fd0a"},{"id":"1890fee77e","time":1375054525054,"width":1055,"height":1183,"imageURL":"http://photo-sync.herokuapp.com/photos/1890fee77e","commentURL":"http://photo-sync.herokuapp.com/comments/1890fee77e"},{"id":"17b443cf8d","time":1375054524209,"width":1018,"height":859,"imageURL":"http://photo-sync.herokuapp.com/photos/17b443cf8d","commentURL":"http://photo-sync.herokuapp.com/comments/17b443cf8d"},{"id":"13b9344a7f","time":1375054524203,"width":847,"height":1159,"imageURL":"http://photo-sync.herokuapp.com/photos/13b9344a7f","commentURL":"http://photo-sync.herokuapp.com/comments/13b9344a7f"},{"id":"1b326bdf4a","time":1375054524137,"width":1168,"height":1004,"imageURL":"http://photo-sync.herokuapp.com/photos/1b326bdf4a","commentURL":"http://photo-sync.herokuapp.com/comments/1b326bdf4a"},{"id":"18de6c88b6","time":1375054466168,"width":1068,"height":1086,"imageURL":"http://photo-sync.herokuapp.com/photos/18de6c88b6","commentURL":"http://photo-sync.herokuapp.com/comments/18de6c88b6"},{"id":"134dd81be7","time":1375054441909,"width":829,"height":1038,"imageURL":"http://photo-sync.herokuapp.com/photos/134dd81be7","commentURL":"http://photo-sync.herokuapp.com/comments/134dd81be7"},{"id":"19fc84339c","time":1375054393581,"width":1116,"height":1070,"imageURL":"http://photo-sync.herokuapp.com/photos/19fc84339c","commentURL":"http://photo-sync.herokuapp.com/comments/19fc84339c"},{"id":"16d7d12b7b","time":1375047800346,"width":981,"height":1009,"imageURL":"http://photo-sync.herokuapp.com/photos/16d7d12b7b","commentURL":"http://photo-sync.herokuapp.com/comments/16d7d12b7b"},{"id":"13181fd5f5","time":1375047792002,"width":820,"height":911,"imageURL":"http://photo-sync.herokuapp.com/photos/13181fd5f5","commentURL":"http://photo-sync.herokuapp.com/comments/13181fd5f5"},{"id":"18493de408","time":1375028512960,"width":1043,"height":800,"imageURL":"http://photo-sync.herokuapp.com/photos/18493de408","commentURL":"http://photo-sync.herokuapp.com/comments/18493de408"},{"id":"13fa987e5e","time":1375028509872,"width":858,"height":867,"imageURL":"http://photo-sync.herokuapp.com/photos/13fa987e5e","commentURL":"http://photo-sync.herokuapp.com/comments/13fa987e5e"},{"id":"16a83592b4","time":1374897199914,"width":973,"height":1136,"imageURL":"http://photo-sync.herokuapp.com/photos/16a83592b4","commentURL":"http://photo-sync.herokuapp.com/comments/16a83592b4"},{"id":"14b38e3582","time":1374895790706,"width":889,"height":1178,"imageURL":"http://photo-sync.herokuapp.com/photos/14b38e3582","commentURL":"http://photo-sync.herokuapp.com/comments/14b38e3582"},{"id":"187902b420","time":1374895716564,"width":1051,"height":943,"imageURL":"http://photo-sync.herokuapp.com/photos/187902b420","commentURL":"http://photo-sync.herokuapp.com/comments/187902b420"},{"id":"1aa351f825","time":1374895716257,"width":1144,"height":920,"imageURL":"http://photo-sync.herokuapp.com/photos/1aa351f825","commentURL":"http://photo-sync.herokuapp.com/comments/1aa351f825"},{"id":"19bacb5882","time":1374895716234,"width":1105,"height":807,"imageURL":"http://photo-sync.herokuapp.com/photos/19bacb5882","commentURL":"http://photo-sync.herokuapp.com/comments/19bacb5882"},{"id":"17ae76a21e","time":1374895662105,"width":1017,"height":1125,"imageURL":"http://photo-sync.herokuapp.com/photos/17ae76a21e","commentURL":"http://photo-sync.herokuapp.com/comments/17ae76a21e"},{"id":"17b45bb031","time":1374895642100,"width":1018,"height":1015,"imageURL":"http://photo-sync.herokuapp.com/photos/17b45bb031","commentURL":"http://photo-sync.herokuapp.com/comments/17b45bb031"},{"id":"198b32582f","time":1374895642098,"width":1097,"height":951,"imageURL":"http://photo-sync.herokuapp.com/photos/198b32582f","commentURL":"http://photo-sync.herokuapp.com/comments/198b32582f"},{"id":"18e457a2c4","time":1374859505425,"width":1069,"height":1016,"imageURL":"http://photo-sync.herokuapp.com/photos/18e457a2c4","commentURL":"http://photo-sync.herokuapp.com/comments/18e457a2c4"},{"id":"1365a663e8","time":1374851469594,"width":833,"height":978,"imageURL":"http://photo-sync.herokuapp.com/photos/1365a663e8","commentURL":"http://photo-sync.herokuapp.com/comments/1365a663e8"},{"id":"154e8a7409","time":1374851467534,"width":915,"height":1200,"imageURL":"http://photo-sync.herokuapp.com/photos/154e8a7409","commentURL":"http://photo-sync.herokuapp.com/comments/154e8a7409"},{"id":"14cb4ca8d1","time":1374849223411,"width":893,"height":1014,"imageURL":"http://photo-sync.herokuapp.com/photos/14cb4ca8d1","commentURL":"http://photo-sync.herokuapp.com/comments/14cb4ca8d1"},{"id":"181fa4ee9f","time":1374844369757,"width":1036,"height":1011,"imageURL":"http://photo-sync.herokuapp.com/photos/181fa4ee9f","commentURL":"http://photo-sync.herokuapp.com/comments/181fa4ee9f"},{"id":"13cb11b49e","time":1374813198576,"width":850,"height":1131,"imageURL":"http://photo-sync.herokuapp.com/photos/13cb11b49e","commentURL":"http://photo-sync.herokuapp.com/comments/13cb11b49e"},{"id":"18495d3344","time":1374813194036,"width":1043,"height":1005,"imageURL":"http://photo-sync.herokuapp.com/photos/18495d3344","commentURL":"http://photo-sync.herokuapp.com/comments/18495d3344"},{"id":"1b0e971b85","time":1374812567717,"width":1162,"height":890,"imageURL":"http://photo-sync.herokuapp.com/photos/1b0e971b85","commentURL":"http://photo-sync.herokuapp.com/comments/1b0e971b85"},{"id":"14a1757969","time":1374812567711,"width":886,"height":817,"imageURL":"http://photo-sync.herokuapp.com/photos/14a1757969","commentURL":"http://photo-sync.herokuapp.com/comments/14a1757969"},{"id":"159bcd5ba9","time":1374812567505,"width":928,"height":824,"imageURL":"http://photo-sync.herokuapp.com/photos/159bcd5ba9","commentURL":"http://photo-sync.herokuapp.com/comments/159bcd5ba9"},{"id":"178a8c69fa","time":1374812404534,"width":1011,"height":870,"imageURL":"http://photo-sync.herokuapp.com/photos/178a8c69fa","commentURL":"http://photo-sync.herokuapp.com/comments/178a8c69fa"},{"id":"1aaf677f8c","time":1374809364778,"width":1146,"height":1194,"imageURL":"http://photo-sync.herokuapp.com/photos/1aaf677f8c","commentURL":"http://photo-sync.herokuapp.com/comments/1aaf677f8c"},{"id":"150cdb4457","time":1374809364354,"width":904,"height":1000,"imageURL":"http://photo-sync.herokuapp.com/photos/150cdb4457","commentURL":"http://photo-sync.herokuapp.com/comments/150cdb4457"},{"id":"19735bf073","time":1374784769579,"width":1093,"height":958,"imageURL":"http://photo-sync.herokuapp.com/photos/19735bf073","commentURL":"http://photo-sync.herokuapp.com/comments/19735bf073"},{"id":"1813b92bb7","time":1374784769569,"width":1034,"height":1011,"imageURL":"http://photo-sync.herokuapp.com/photos/1813b92bb7","commentURL":"http://photo-sync.herokuapp.com/comments/1813b92bb7"},{"id":"1459ecbd05","time":1374784730775,"width":874,"height":803,"imageURL":"http://photo-sync.herokuapp.com/photos/1459ecbd05","commentURL":"http://photo-sync.herokuapp.com/comments/1459ecbd05"},{"id":"143068af28","time":1374784729586,"width":867,"height":1151,"imageURL":"http://photo-sync.herokuapp.com/photos/143068af28","commentURL":"http://photo-sync.herokuapp.com/comments/143068af28"},{"id":"1b67fafd4b","time":1374784729548,"width":1177,"height":861,"imageURL":"http://photo-sync.herokuapp.com/photos/1b67fafd4b","commentURL":"http://photo-sync.herokuapp.com/comments/1b67fafd4b"},{"id":"1a3e24effe","time":1374784267649,"width":1127,"height":1175,"imageURL":"http://photo-sync.herokuapp.com/photos/1a3e24effe","commentURL":"http://photo-sync.herokuapp.com/comments/1a3e24effe"},{"id":"17e4124490","time":1374772203073,"width":1026,"height":1065,"imageURL":"http://photo-sync.herokuapp.com/photos/17e4124490","commentURL":"http://photo-sync.herokuapp.com/comments/17e4124490"},{"id":"1a61b7787c","time":1374772202268,"width":1133,"height":856,"imageURL":"http://photo-sync.herokuapp.com/photos/1a61b7787c","commentURL":"http://photo-sync.herokuapp.com/comments/1a61b7787c"},{"id":"1a44030e66","time":1374772202261,"width":1128,"height":1020,"imageURL":"http://photo-sync.herokuapp.com/photos/1a44030e66","commentURL":"http://photo-sync.herokuapp.com/comments/1a44030e66"},{"id":"15d1a8344e","time":1374771453218,"width":937,"height":1177,"imageURL":"http://photo-sync.herokuapp.com/photos/15d1a8344e","commentURL":"http://photo-sync.herokuapp.com/comments/15d1a8344e"},{"id":"14a79568bd","time":1374771453215,"width":887,"height":1093,"imageURL":"http://photo-sync.herokuapp.com/photos/14a79568bd","commentURL":"http://photo-sync.herokuapp.com/comments/14a79568bd"},{"id":"1483cd1b14","time":1374771453213,"width":881,"height":1060,"imageURL":"http://photo-sync.herokuapp.com/photos/1483cd1b14","commentURL":"http://photo-sync.herokuapp.com/comments/1483cd1b14"},{"id":"18435124dd","time":1374771448500,"width":1042,"height":860,"imageURL":"http://photo-sync.herokuapp.com/photos/18435124dd","commentURL":"http://photo-sync.herokuapp.com/comments/18435124dd"},{"id":"17ea080c04","time":1374632604643,"width":1027,"height":1064,"imageURL":"http://photo-sync.herokuapp.com/photos/17ea080c04","commentURL":"http://photo-sync.herokuapp.com/comments/17ea080c04"},{"id":"132a18ff82","time":1374632604592,"width":823,"height":1065,"imageURL":"http://photo-sync.herokuapp.com/photos/132a18ff82","commentURL":"http://photo-sync.herokuapp.com/comments/132a18ff82"},{"id":"17a86c497a","time":1374632598428,"width":1016,"height":991,"imageURL":"http://photo-sync.herokuapp.com/photos/17a86c497a","commentURL":"http://photo-sync.herokuapp.com/comments/17a86c497a"},{"id":"13c51a56cc","time":1374632598411,"width":849,"height":1121,"imageURL":"http://photo-sync.herokuapp.com/photos/13c51a56cc","commentURL":"http://photo-sync.herokuapp.com/comments/13c51a56cc"},{"id":"198b4f94b3","time":1374632574318,"width":1097,"height":1143,"imageURL":"http://photo-sync.herokuapp.com/photos/198b4f94b3","commentURL":"http://photo-sync.herokuapp.com/comments/198b4f94b3"},{"id":"1943ccd966","time":1374632573833,"width":1085,"height":1168,"imageURL":"http://photo-sync.herokuapp.com/photos/1943ccd966","commentURL":"http://photo-sync.herokuapp.com/comments/1943ccd966"},{"id":"145fea62c5","time":1374632307286,"width":875,"height":854,"imageURL":"http://photo-sync.herokuapp.com/photos/145fea62c5","commentURL":"http://photo-sync.herokuapp.com/comments/145fea62c5"},{"id":"1819ab217a","time":1374527520288,"width":1035,"height":986,"imageURL":"http://photo-sync.herokuapp.com/photos/1819ab217a","commentURL":"http://photo-sync.herokuapp.com/comments/1819ab217a"},{"id":"164ebd8ee9","time":1374527520286,"width":958,"height":1032,"imageURL":"http://photo-sync.herokuapp.com/photos/164ebd8ee9","commentURL":"http://photo-sync.herokuapp.com/comments/164ebd8ee9"},{"id":"1af6d743b1","time":1374527518214,"width":1158,"height":1045,"imageURL":"http://photo-sync.herokuapp.com/photos/1af6d743b1","commentURL":"http://photo-sync.herokuapp.com/comments/1af6d743b1"},{"id":"16f5b7c6ca","time":1374527518152,"width":986,"height":1174,"imageURL":"http://photo-sync.herokuapp.com/photos/16f5b7c6ca","commentURL":"http://photo-sync.herokuapp.com/comments/16f5b7c6ca"},{"id":"16c00b72be","time":1374373098008,"width":977,"height":1125,"imageURL":"http://photo-sync.herokuapp.com/photos/16c00b72be","commentURL":"http://photo-sync.herokuapp.com/comments/16c00b72be"},{"id":"175ae0ef45","time":1374373097465,"width":1003,"height":893,"imageURL":"http://photo-sync.herokuapp.com/photos/175ae0ef45","commentURL":"http://photo-sync.herokuapp.com/comments/175ae0ef45"},{"id":"1a7f92280b","time":1374251433731,"width":1138,"height":943,"imageURL":"http://photo-sync.herokuapp.com/photos/1a7f92280b","commentURL":"http://photo-sync.herokuapp.com/comments/1a7f92280b"},{"id":"18c690b951","time":1374161791733,"width":1064,"height":1058,"imageURL":"http://photo-sync.herokuapp.com/photos/18c690b951","commentURL":"http://photo-sync.herokuapp.com/comments/18c690b951"},{"id":"1b149ef433","time":1374160081489,"width":1163,"height":1007,"imageURL":"http://photo-sync.herokuapp.com/photos/1b149ef433","commentURL":"http://photo-sync.herokuapp.com/comments/1b149ef433"},{"id":"1359d41580","time":1374160028232,"width":831,"height":1144,"imageURL":"http://photo-sync.herokuapp.com/photos/1359d41580","commentURL":"http://photo-sync.herokuapp.com/comments/1359d41580"},{"id":"1a79c0934c","time":1374160025664,"width":1137,"height":1181,"imageURL":"http://photo-sync.herokuapp.com/photos/1a79c0934c","commentURL":"http://photo-sync.herokuapp.com/comments/1a79c0934c"},{"id":"14b38dff53","time":1374160025653,"width":889,"height":1177,"imageURL":"http://photo-sync.herokuapp.com/photos/14b38dff53","commentURL":"http://photo-sync.herokuapp.com/comments/14b38dff53"},{"id":"1524ad25b2","time":1374160023265,"width":908,"height":964,"imageURL":"http://photo-sync.herokuapp.com/photos/1524ad25b2","commentURL":"http://photo-sync.herokuapp.com/comments/1524ad25b2"},{"id":"1395441c92","time":1374159943850,"width":841,"height":864,"imageURL":"http://photo-sync.herokuapp.com/photos/1395441c92","commentURL":"http://photo-sync.herokuapp.com/comments/1395441c92"},{"id":"16f5a71e9f","time":1374159300483,"width":986,"height":1065,"imageURL":"http://photo-sync.herokuapp.com/photos/16f5a71e9f","commentURL":"http://photo-sync.herokuapp.com/comments/16f5a71e9f"},{"id":"1347dae89c","time":1374159300482,"width":828,"height":990,"imageURL":"http://photo-sync.herokuapp.com/photos/1347dae89c","commentURL":"http://photo-sync.herokuapp.com/comments/1347dae89c"},{"id":"1760ee033f","time":1374159285636,"width":1004,"height":1045,"imageURL":"http://photo-sync.herokuapp.com/photos/1760ee033f","commentURL":"http://photo-sync.herokuapp.com/comments/1760ee033f"},{"id":"1324366063","time":1374159285317,"width":822,"height":1192,"imageURL":"http://photo-sync.herokuapp.com/photos/1324366063","commentURL":"http://photo-sync.herokuapp.com/comments/1324366063"},{"id":"1a4ff222a7","time":1374158856883,"width":1130,"height":1041,"imageURL":"http://photo-sync.herokuapp.com/photos/1a4ff222a7","commentURL":"http://photo-sync.herokuapp.com/comments/1a4ff222a7"},{"id":"19b4e52568","time":1374158855544,"width":1104,"height":909,"imageURL":"http://photo-sync.herokuapp.com/photos/19b4e52568","commentURL":"http://photo-sync.herokuapp.com/comments/19b4e52568"},{"id":"1b85c21c4d","time":1374145349490,"width":1182,"height":820,"imageURL":"http://photo-sync.herokuapp.com/photos/1b85c21c4d","commentURL":"http://photo-sync.herokuapp.com/comments/1b85c21c4d"},{"id":"172b26d185","time":1374145336373,"width":995,"height":821,"imageURL":"http://photo-sync.herokuapp.com/photos/172b26d185","commentURL":"http://photo-sync.herokuapp.com/comments/172b26d185"},{"id":"12fa659ee7","time":1374145336363,"width":815,"height":1037,"imageURL":"http://photo-sync.herokuapp.com/photos/12fa659ee7","commentURL":"http://photo-sync.herokuapp.com/comments/12fa659ee7"},{"id":"1642c4ec0a","time":1374131386001,"width":956,"height":948,"imageURL":"http://photo-sync.herokuapp.com/photos/1642c4ec0a","commentURL":"http://photo-sync.herokuapp.com/comments/1642c4ec0a"},{"id":"1aa35e963e","time":1374131351795,"width":1144,"height":1003,"imageURL":"http://photo-sync.herokuapp.com/photos/1aa35e963e","commentURL":"http://photo-sync.herokuapp.com/comments/1aa35e963e"},{"id":"1a9771b1bf","time":1374131349344,"width":1142,"height":996,"imageURL":"http://photo-sync.herokuapp.com/photos/1a9771b1bf","commentURL":"http://photo-sync.herokuapp.com/comments/1a9771b1bf"},{"id":"1b326b19c9","time":1374131317691,"width":1168,"height":999,"imageURL":"http://photo-sync.herokuapp.com/photos/1b326b19c9","commentURL":"http://photo-sync.herokuapp.com/comments/1b326b19c9"},{"id":"12d0ada948","time":1374131317690,"width":808,"height":1045,"imageURL":"http://photo-sync.herokuapp.com/photos/12d0ada948","commentURL":"http://photo-sync.herokuapp.com/comments/12d0ada948"},{"id":"1ab54cd106","time":1374065635051,"width":1147,"height":1086,"imageURL":"http://photo-sync.herokuapp.com/photos/1ab54cd106","commentURL":"http://photo-sync.herokuapp.com/comments/1ab54cd106"},{"id":"1648c3817a","time":1374064393449,"width":957,"height":1005,"imageURL":"http://photo-sync.herokuapp.com/photos/1648c3817a","commentURL":"http://photo-sync.herokuapp.com/comments/1648c3817a"},{"id":"160d0b9c56","time":1374064393440,"width":947,"height":814,"imageURL":"http://photo-sync.herokuapp.com/photos/160d0b9c56","commentURL":"http://photo-sync.herokuapp.com/comments/160d0b9c56"},{"id":"1a2c3ca0d7","time":1374038413468,"width":1124,"height":1132,"imageURL":"http://photo-sync.herokuapp.com/photos/1a2c3ca0d7","commentURL":"http://photo-sync.herokuapp.com/comments/1a2c3ca0d7"}],"nextURL":"http://photo-sync.herokuapp.com/photos?time=1374038413468"}
+  
+ //--------------------------------------resizing----------------------------
+ function resizing(img) {
+    var width = img.width;
+    var height = img.height;
+
+    var maxWidth = 160;
+    var maxHeight = 160;
+    var resizeWidth;
+    var resizeHeight;
+    
+    var basisRatio = maxHeight / maxWidth;
+    var imgRatio = height / width;
+
+    if (imgRatio > basisRatio) {
+        
+        if (height > maxHeight) {
+            resizeHeight = maxHeight;
+            resizeWidth = Math.round((width * resizeHeight) / height);
+        } else {
+            resizeWidth = width;
+            resizeHeight = height;
+        }
+        
+    } else if (imgRatio < basisRatio) {
+        
+        if (width > maxWidth) {
+            resizeWidth = maxWidth;
+            resizeHeight = Math.round((height * resizeWidth) / width);
+        } else {
+            resizeWidth = width;
+            resizeHeight = height;
+        }
+        
+    } else {
+        resizeWidth = width;
+        resizeHeight = height;
+    }
+    
+    img.width = resizeWidth;
+    img.height = resizeHeight;}
+//--------------------------------------resizing----------------------------
+  
+  
+ //-------------------json date -> date----------------------------
+ function ChangeDateFormat(jsondate) {
+ jsondate = jsondate.replace("/Date(", "").replace(")/", "");
+ if (jsondate.indexOf("+") > 0) {
+ jsondate = jsondate.substring(0, jsondate.indexOf("+"));
+ } else if (jsondate.indexOf("-") > 0) {
+ jsondate = jsondate.substring(0, jsondate.indexOf("-"));
+ }
+ var date = new Date(parseInt(jsondate, 10)); 
+ var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+ var currentDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+ return date.getFullYear() + "-" + month + "-" + currentDate ;
+ }
+ var strdate = ChangeDateFormat(photos.photos[0].time.toString());
+//-------------------json date -> date----------------------------
+
+
+//-------------------pictures output----------------------------
+var count=0;
+function outpic(i)
+ {
+ if (count < 5)
+ {
+   var img = document.createElement("img");
+   img.src = photos.photos[i].imageURL;
+   var ps = document.getElementById("dimg1");
+   document.body.insertBefore(img,ps);
+   img.onload = resizing(img);
+   count++;
+ }
+ 
+  else if ( count >4 &&count < 10)
+ {
+   var img = document.createElement("img");
+   img.src = photos.photos[i].imageURL;
+   var ps = document.getElementById("dimg2");
+   document.body.insertBefore(img,ps);
+   img.onload = resizing(img);
+   count++;
+ }
+ 
+  else if (count >9 &&count < 15)
+ {
+   var img = document.createElement("img");
+   img.src = photos.photos[i].imageURL;
+   var ps = document.getElementById("dimg3");
+   document.body.insertBefore(img,ps);
+   img.onload = resizing(img);
+   count++;
+ }
+ 
+  else if (count >14 &&count < 20)
+ {
+   var img = document.createElement("img");
+   img.src = photos.photos[i].imageURL;
+   var ps = document.getElementById("dimg4");
+   document.body.insertBefore(img,ps);
+   img.onload = resizing(img);
+   count++;
+ }
+ 
+  else if (count >19 &&count < 25)
+ {
+   var img = document.createElement("img");
+   img.src = photos.photos[i].imageURL;
+   var ps = document.getElementById("dimg5");
+   document.body.insertBefore(img,ps);
+   img.onload = resizing(img);
+   count++;
+ }
+ 
+ };
+ //-------------------pictures output----------------------------
+
+//document.getElementById("jdate").innerHTML=strdate
+//document.getElementById("jid").innerHTML=photos.photos[0].id
+//document.getElementById("jw").innerHTML=JSONObject.width  
+//document.getElementById("jh").innerHTML=JSONObject.height
+
+//-----------------------date selector--------------------------------
+
+
+function sh(strdate)
+{
+  	for(i=0 ; i<photos.photos.length ; i++)
+	 {
+ 	      if(ChangeDateFormat(photos.photos[i].time.toString()) == strdate)
+	      {
+            outpic(i);
+	       }
+     }
+	 document.getElementById("tdate").innerHTML=strdate;
+	 
+};
+//-----------------------date selector--------------------------------
+
+/*for(i=0 ; i<photos.photos.length ; i++)
+{
+ 	   if(ChangeDateFormat(photos.photos[i].time.toString()) == strdate)
+	   {
+       outpic(i);
+	   }
+}*/
+
+//--------------------------------------drop down menu
+$(function(){
+	//Hide SubLevel Menus
+	$('#header ul li ul').hide();
+	//OnHover Show SubLevel Menus
+	$('#header ul li').hover(
+		//OnHover
+		function(){
+			//Hide Other Menus
+			$('#header ul li').not($('ul', this)).stop();
+			//Add the Arrow
+			$('ul li:first-child', this).before(
+				'<li class="arrow">arrow</li>');
+			//Remove the Border
+			$('ul li.arrow', this).css('border-bottom', '0');
+			// Show Hoved Menu
+			$('ul', this).slideDown();
+		},
+		//OnOut
+		function(){
+			// Hide Other Menus
+			$('ul', this).slideUp();
+			//Remove the Arrow
+			$('ul li.arrow', this).remove();});
+});
+//--------------------------------------drop down menu
+</script>
+  </body>
+</html>
