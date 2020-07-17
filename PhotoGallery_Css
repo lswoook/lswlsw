@@ -1,0 +1,101 @@
+#tdate{
+font:small-caps 30px Helvetica, Arial;color:#B4B4B4;
+}
+
+
+
+img{
+    margin:30;
+    background: #ccc;
+    border: 5px solid white;
+    position:relative;
+    box-shadow: 0px 0px 99px rgba(0, 0, 0, 0.86);
+    -moz-box-shadow: 0px 0px 99px rgba(0, 0, 0, 0.86);
+    -webkit-box-shadow: 0px 0px 99px rgba(0, 0, 0, 0.86);
+}
+
+body {
+	text-align:center;
+	position: relative;
+}
+a {
+	text-decoration: none;
+}
+
+img{
+    margin:20px;
+}
+/* Header */
+#header {
+background-color:#E4F7BA
+	background: -webkit-gradient(linear, left top, left bottom,	color-stop(0, rgb(117,18,41)), color-stop(1, rgb(79,7,24)));
+	height: 86px;
+}
+
+/* Top Level Menu */
+#header ul {
+	margin: 0 ;
+	width: 1200px;
+}
+
+#header ul li {
+	display: block;
+	float: right;
+	margin: 0px 0 0;
+	width: 80px;
+}
+
+#header ul li a {
+	color: #FFF;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Sub Level Nav */
+#header ul li ul {
+	background: #F4F4F4;
+	border: 0px solid #000;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+	margin: 10px 0 0 -46px;
+	padding: 0 10px 0;
+	position: fixed;
+	width: 126px;
+}
+
+#header ul li ul li {
+	border-bottom: 1px solid #CCC;
+	display: block;
+	float: none;
+	height: 14px;
+	padding: 8px 0;
+	text-align: center;
+	width: 126px;
+	margin: 0;
+}
+
+#header ul li ul li a {
+	color: #620d20;
+	text-shadow: none;
+}
+
+#header ul li ul li a:hover {
+	color: #000;
+}
+
+#header ul li ul li:last-child:not(li.arrow) {
+	border: 0;
+}
+
+/* Arrow */
+.arrow {
+	background: url(arrow.png) no-repeat;
+	border: 0;
+	display: none;
+	position: absolute;
+		top: -10px;
+		left: 63px;
+	height: 11px;
+	width: 20px;
+	text-indent: -9999px;
+}
