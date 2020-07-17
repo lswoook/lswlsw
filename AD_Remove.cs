@@ -19,7 +19,7 @@ using AutoItX3Lib;
 
 using Excel = Microsoft.Office.Interop.Excel;
 
-namespace Bandposting2._6
+namespace BP2._6
 {
     class Program
     {
