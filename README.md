@@ -1,4 +1,4 @@
-# 네이버 밴드 & 카페 악성 광고 차단용 Crawler
+# N사 밴드 & 카페 악성 광고 차단용 Crawler
 
 <!-- PROJECT SHIELDS -->
 <!--
